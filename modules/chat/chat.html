@@ -1,9 +1,11 @@
 <div class="jumbotron text-center">
+  <div style="max-width: 600px; margin: auto">
+
     <h1>Chat page</h1>
 
     <table class="table table-condensed">
       <tbody>
-        <tr ng-repeat="msg in receivedData">
+        <tr ng-repeat="msg in receivedData" style="text-align: left">
           <td ng-if="msg.type != 'srv'"><span style="font-style:italic;">{{ msg.userName }}:</span>  {{ msg.text }}</td>
           <td ng-if="msg.type == 'srv'" style="color: green; font-style: italic;">{{ msg.text }}</td>
         </tr>
@@ -19,5 +21,5 @@
         <button class="btn btn-secondary" ng-disabled="isConnected() == false" type="button" ng-click="onDisconnect()">Disconnect!</button>
       </span>
     </div>
-
+  </div>
 </div>
