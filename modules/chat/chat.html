@@ -6,8 +6,11 @@
     <table class="table table-condensed">
       <tbody>
         <tr ng-repeat="msg in receivedData" style="text-align: left">
-          <td ng-if="msg.type != 'srv'"><span style="font-style:italic;">{{ msg.userName }}:</span>  {{ msg.text }}</td>
-          <td ng-if="msg.type == 'srv'" style="color: green; font-style: italic;">{{ msg.text }}</td>
+          <td ng-if="msg.type != 'srv'">
+            <span style="font-style:italic; color: blue;">{{ msg.userName }}:</span>
+            <span style="text-overflow: ellipsis;">{{ msg.text }}</span>
+          </td>
+          <td ng-if="msg.type == 'srv'" style="color: green; font-style: italic; width: 600px">{{ msg.text }}</td>
         </tr>
       </tbody>
     </table>
