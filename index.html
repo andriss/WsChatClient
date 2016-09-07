@@ -1,0 +1,58 @@
+<!-- index.html -->
+    <!DOCTYPE html>
+    <html ng-app="app">
+    <head>
+
+      <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+
+      <script src="//cdn.jsdelivr.net/bluebird/3.4.5/bluebird.js"></script>
+
+      <script src="boot.js"></script>
+
+      <script src="infra/config.js"></script>
+      <script src="infra/delay.js"></script>
+      <script src="infra/Events.js"></script>
+
+      <script src="modules/main/mainController.js"></script>
+      <script src="modules/home/homeController.js"></script>
+      <script src="modules/home/homeState.js"></script>
+      <script src="modules/chat/chatController.js"></script>
+      <script src="modules/chat/chatState.js"></script>
+
+      <script src="modules/ws/ws.js"></script>
+      <script src="modules/ws/WsConnectionDenied.js"></script>
+      <script src="modules/ws/WsConnectionError.js"></script>
+
+      <script src="ngPlugins/blur.js"></script>
+
+    </head>
+    <body ng-controller="mainController">
+
+        <header>
+            <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">WebSockets Chat App Client</a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#/" ng-show="$window.location.hash == '#/'"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#chat" ng-show="$window.location.hash == '#/chat'"><i class="fa fa-weixin"></i> Chat</a></li>
+                </ul>
+            </div>
+            </nav>
+        </header>
+
+        <div id="main">
+             <div ng-view></div>
+        </div>
+
+    </body>
+    </html>

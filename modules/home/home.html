@@ -1,0 +1,17 @@
+<div class="jumbotron text-center">
+    <h1>Home Page</h1>
+
+    <div class="input-group">
+      <input type="text" class="form-control" ng-disabled="!homeState.isBtnEnabled" placeholder="Enter nickname..." ng-model="homeState.userName">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" ng-disabled="!homeState.isBtnEnabled" ng-click="onLogin()">
+          <span ng-if="!homeState.isLoading">Go!</span>
+          <span ng-if="homeState.isLoading" class="fa fa-circle-o-notch fa-spin"></span>
+        </button>
+      </span>
+    </div>
+
+    <div class="alert alert-danger" role="alert" ng-if="homeState.errorMsg">
+      {{ homeState.errorMsg }}
+    </div>
+</div>

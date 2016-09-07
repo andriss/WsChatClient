@@ -1,0 +1,23 @@
+<div class="jumbotron text-center">
+    <h1>Chat page</h1>
+
+    <table class="table table-condensed">
+      <tbody>
+        <tr ng-repeat="msg in receivedData">
+          <td ng-if="msg.type != 'srv'"><span style="font-style:italic;">{{ msg.userName }}:</span>  {{ msg.text }}</td>
+          <td ng-if="msg.type == 'srv'" style="color: green; font-style: italic;">{{ msg.text }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Enter message..." ng-model="chatState.message">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" ng-disabled="isConnected() == false" type="button" blur ng-click="onSend()">Send!</button>
+      </span>
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" ng-disabled="isConnected() == false" type="button" ng-click="onDisconnect()">Disconnect!</button>
+      </span>
+    </div>
+
+</div>
