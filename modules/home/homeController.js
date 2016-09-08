@@ -7,7 +7,7 @@ app.controller('homeController',
 
       tryConnect()
       .catch(WsConnectionError, function(e) {
-          return retry(e.message);
+          return retry(e.message); // retry single time
       });
     };
 

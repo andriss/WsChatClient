@@ -20,4 +20,9 @@
       $scope.isConnected = function() {
           return ws.isConnected();
       };
+
+      // leave chat when browser closes
+      $window.onbeforeunload = function() {
+       ws.leave();
+     };
   });
