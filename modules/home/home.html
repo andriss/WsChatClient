@@ -1,12 +1,12 @@
 <div class="jumbotron text-center">
 
-    <div style="max-width: 600px; margin: auto">  
+    <div style="max-width: 600px; margin: auto">
       <h1>Home Page</h1>
 
       <div class="input-group">
         <input type="text" class="form-control" ng-disabled="!homeState.isBtnEnabled" placeholder="Enter nickname..." ng-model="homeState.userName">
         <span class="input-group-btn">
-          <button class="btn btn-secondary" type="button" ng-disabled="!homeState.isBtnEnabled" ng-click="onLogin()">
+          <button class="btn btn-primary" type="button" ng-disabled="!homeState.isBtnEnabled" ng-click="onLogin()">
             <span ng-if="!homeState.isLoading">Go!</span>
             <span ng-if="homeState.isLoading" class="fa fa-circle-o-notch fa-spin"></span>
           </button>

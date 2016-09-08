@@ -1,6 +1,6 @@
 #Installation
 
-To run client:
+To run server:
 * cd to WsChatClient dir 
 * run "npm install" 
 * run "node server.js"
